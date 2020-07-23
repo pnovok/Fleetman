@@ -1,2 +1,2 @@
-# fleetman-position-simulator
+# Fleetman-position-simulator
 
