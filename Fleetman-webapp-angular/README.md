@@ -1,7 +1,3 @@
-# K8sFleetmanWebappAngular
+# Fleetman-webapp-angular
 
-This is an experimental project to port the front end to Angular.
-
-It's temporarily on hold, as some very minor problems got in the way. For example, the Moving Marker that we rely on doesn't have any native integration with Angular and it would take us too long to unpick how to do it. 
-
-For now, we'll stick with SpringBoot (MVC) on the front end.
+Web Application – is an Angular based front module which allows monitoring truck positions on the map and jumping to a specific truck location while showing its traveled path. 
