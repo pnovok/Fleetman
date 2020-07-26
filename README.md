@@ -19,8 +19,8 @@ CREATE INDEX `ix_name` ON `test`(`name`);
 CREATE INDEX `ix_timestamp` ON `test`(`timestamp`);
 
 3) Compile Java modules for position tracker, position simulator and api-gateway. Run each of the .jar files produced.
-4) Compile and Run the webapp angular module with the following command: 
+4) Compile and Run the front-end Angular app  with the following command: 
 
 npm start 
 
-That should bring up the map showing each truck location, last seen time and speed.
+That should bring up the map on localhost:4200 showing each truck location, last seen time and speed.
