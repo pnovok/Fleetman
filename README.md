@@ -5,8 +5,8 @@ Fleetman application simulates monitoring of a fleet of trucks. The application 
 I made the following changes:
 
 1) Upgraded the version of Spring Boot 1.5.2 to 2.2.1;
-2) Replaced Mongodb persistence storage implementation with Couchbase;
-3) Added speed calculation version of the application;
+2) Replaced Mongo persistence storage implementation with Couchbase;
+3) Added speed calculation for the database version of the application;
 
 Fleetman has been tested locally on my Mac with 16GB of RAM and 6 CPU cores configuration.
 
