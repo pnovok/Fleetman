@@ -5,14 +5,22 @@ Fleetman application simulates monitoring of a fleet of trucks. The application 
 I made the following changes:
 
 1) Upgraded the version of Spring Boot 1.5.2 to 2.2.1;
-2) Replaced Mongodb persistent storage implementation with Couchbase;
-3) Added speed calculation for the database storage implementation version of the application;
+2) Replaced Mongodb persistence storage implementation with Couchbase;
+3) Added speed calculation version of the application;
 
-The application has been tested locally on my Mac with 16GB of RAM.
+Fleetman has been tested locally on my Mac with 16GB of RAM and 6 CPU cores configuration.
 
 To run the app locally:
 
 1) Install and run Apache ActiveMQ.
-2) Install and run Couchbase, configure the bucket, setup the RBAC user with the same name and grant it bucket permissions.
-2) Compile Java modules for position tracker, position simulator and api-gateway and run each of the .jar files produced.
-4) Compile and Run the webapp angular module with the following command: npm start That should bring up the map showing each truck location, last seen time and speed.
+2) Install and run Couchbase, configure the bucket, setup the RBAC user with the same name as a bucket and grant it bucket permissions. Add 2 secondary indexes on name and timestamp
+
+CREATE INDEX `ix_name` ON `test`(`name`);
+CREATE INDEX `ix_timestamp` ON `test`(`timestamp`);
+
+3) Compile Java modules for position tracker, position simulator and api-gateway. Run each of the .jar files produced.
+4) Compile and Run the webapp angular module with the following command: 
+
+npm start 
+
+That should bring up the map showing each truck location, last seen time and speed.
