@@ -1,6 +1,6 @@
 # Fleetman
 
-Fleetman application simulates monitoring of a fleet of trucks. The application generates geo positioning data for each truck, stores this data either in memory or in the database (Couchbase), and feeds location data into a convenient map-based web UI where we could see the latest position of each truck, its speed and a current journey. The original code for this application is taken from the Udemy class on K8s and Microservices: https://www.udemy.com/course/kubernetes-microservices/ and you can find it here: https://github.com/DickChesterwood/k8s-fleetman
+Fleetman application simulates the monitoring of a fleet of trucks. The application generates geo positioning data for each truck, stores this data either in memory or in the database (Couchbase), and feeds location data into a convenient map-based web UI where we could see the latest position of each truck, its speed and a current journey. The original source code for this application can be found here: https://github.com/DickChesterwood/k8s-fleetman. I put a blog article describing Fleetman's architecure and migration to Couchbase. It can be found here: https://blog.couchbase.com/refactoring-spring-microservices-application-to-work-with-couchbase/
 
 I made the following changes:
 
@@ -13,9 +13,10 @@ Fleetman has been tested locally on my Mac with 16GB of RAM and 6 CPU cores conf
 To run the app locally:
 
 1) Install and run Apache ActiveMQ.
-2) Install and run Couchbase, configure the bucket, setup the RBAC user with the same name as a bucket and grant it bucket permissions. Add 2 secondary indexes on name and timestamp
+2) Install and run Couchbase, configure the bucket, setup the RBAC user with the same name as a bucket and grant it bucket permissions. Add 2 secondary indexes on name and timestamp.
 
 CREATE INDEX `ix_name` ON `test`(`name`);
+
 CREATE INDEX `ix_timestamp` ON `test`(`timestamp`);
 
 3) Compile Java modules for position tracker, position simulator and api-gateway. Run each of the .jar files produced.
@@ -23,4 +24,4 @@ CREATE INDEX `ix_timestamp` ON `test`(`timestamp`);
 
 npm start 
 
-That should bring up the map on localhost:4200 showing each truck location, last seen time and speed.
+That should bring up the map on localhost:4200 showing each truck's location, last seen time and speed.
